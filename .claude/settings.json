@@ -1,0 +1,21 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '(.tool_input.file_path // \"\") | select(test(\"\\\\.(vue|ts|js)$\"))' | grep -q . && pnpm --dir \"$CLAUDE_PROJECT_DIR\" run format",
+            "statusMessage": "Formatting..."
+          },
+          {
+            "type": "command",
+            "command": "jq -r '(.tool_input.file_path // \"\") | select(test(\"\\\\.(vue|ts|js)$\"))' | grep -q . && pnpm --dir \"$CLAUDE_PROJECT_DIR\" run lint",
+            "statusMessage": "Linting..."
+          }
+        ]
+      }
+    ]
+  }
+}

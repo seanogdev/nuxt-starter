@@ -1,0 +1,29 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": [
+    "domains/*/nuxt.config.ts",
+    "app/**/*.vue",
+    "app/composables/**/*.ts",
+    "app/utils/**/*.ts",
+    "app/pages/**/*.vue",
+    "domains/**/pages/**/*.vue",
+    "domains/**/components/**/*.vue",
+    "domains/**/composables/**/*.ts",
+    "server/api/**/*.ts",
+    "domains/**/server/api/**/*.ts",
+    "server/middleware/**/*.ts",
+    "server/utils/**/*.ts",
+    "server/types/**/*.ts",
+    "shared/types/**/*.d.ts"
+  ],
+  "project": ["**/*.{ts,tsx,js,mjs,vue}"],
+  "ignore": ["app/app.config.ts"],
+  "ignoreDependencies": [
+    "ky",
+    "unstorage",
+    "@vitejs/plugin-vue",
+    "@vitest/browser",
+    "vite",
+    "vue-tsc"
+  ]
+}
