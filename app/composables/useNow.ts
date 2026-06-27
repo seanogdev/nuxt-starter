@@ -7,6 +7,6 @@ import { DateTime } from 'luxon';
  * @returns A reactive DateTime object
  */
 export function useNowByMinute() {
-  const now = useNow({ interval: 60000 });
+  const now = useNow({ interval: 60_000 });
   return computed(() => DateTime.fromJSDate(now.value));
 }

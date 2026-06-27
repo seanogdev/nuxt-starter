@@ -17,6 +17,10 @@ const TIME_FORMATS = {
   withLongOffset: DateTime.TIME_WITH_LONG_OFFSET,
 } as const;
 
+function formatRelative(dateTime: DateTime) {
+  return dateTime.toRelative();
+}
+
 export function useDate() {
   function formatTime(dateTime: DateTime, format: LocalizedTimeFormat = 'simple') {
     return dateTime.toLocaleString(TIME_FORMATS[format]);
@@ -34,10 +38,6 @@ export function useDate() {
     const datePart = dateTime.toLocaleString(DATE_FORMATS[dateFormat]);
     const timePart = dateTime.toLocaleString(TIME_FORMATS[timeFormat]);
     return `${datePart} ${timePart}`;
-  }
-
-  function formatRelative(dateTime: DateTime) {
-    return dateTime.toRelative();
   }
 
   return {
