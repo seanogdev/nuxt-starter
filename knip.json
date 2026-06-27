@@ -19,8 +19,6 @@
   "project": ["**/*.{ts,tsx,js,mjs,vue}"],
   "ignore": ["app/app.config.ts"],
   "ignoreDependencies": [
-    "ky",
-    "unstorage",
     "@vitejs/plugin-vue",
     "@vitest/browser",
     "vite",

@@ -1,4 +1,7 @@
 {
+  "permissions": {
+    "allow": ["Bash(pnpm *)", "Bash(git *)", "Write(*)", "Edit(*)"]
+  },
   "hooks": {
     "PostToolUse": [
       {
@@ -6,12 +9,12 @@
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '(.tool_input.file_path // \"\") | select(test(\"\\\\.(vue|ts|js)$\"))' | grep -q . && pnpm --dir \"$CLAUDE_PROJECT_DIR\" run format",
+            "command": "file=$(jq -r '.tool_input.file_path // \"\"'); case \"$file\" in \"$CLAUDE_PROJECT_DIR\"/*.vue|\"$CLAUDE_PROJECT_DIR\"/*.ts|\"$CLAUDE_PROJECT_DIR\"/*.js) pnpm --dir \"$CLAUDE_PROJECT_DIR\" run format ;; esac",
             "statusMessage": "Formatting..."
           },
           {
             "type": "command",
-            "command": "jq -r '(.tool_input.file_path // \"\") | select(test(\"\\\\.(vue|ts|js)$\"))' | grep -q . && pnpm --dir \"$CLAUDE_PROJECT_DIR\" run lint",
+            "command": "file=$(jq -r '.tool_input.file_path // \"\"'); case \"$file\" in \"$CLAUDE_PROJECT_DIR\"/*.vue|\"$CLAUDE_PROJECT_DIR\"/*.ts|\"$CLAUDE_PROJECT_DIR\"/*.js) pnpm --dir \"$CLAUDE_PROJECT_DIR\" run lint ;; esac",
             "statusMessage": "Linting..."
           }
         ]

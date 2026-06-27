@@ -1,6 +1,14 @@
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  simple-git-hooks: true
+  unrs-resolver: true
+  vue-demi: true
 ignoredBuiltDependencies:
   - '@parcel/watcher'
   - '@tailwindcss/oxide'
   - esbuild
   - unrs-resolver
   - vue-demi
+minimumReleaseAgeExclude:
+  - eslint@10.6.0

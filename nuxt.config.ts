@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   },
   typescript: {
     tsConfig: {
-      include: ['../vitest.config.ts'],
+      include: ['../vitest.config.ts', '../oxlint.config.ts', '../oxfmt.config.ts'],
     },
   },
   compatibilityDate: '2026-02-24',
