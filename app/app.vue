@@ -1,23 +1,21 @@
 <script setup>
 useHead({
-  titleTemplate: (titleChunk) => (titleChunk ? `${titleChunk} · Nuxt Starter` : 'Nuxt Starter'),
-  meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+  htmlAttrs: { lang: 'en' },
   link: [
-    { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
-    { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
-    { rel: 'manifest', href: '/site.webmanifest' },
+    { href: '/favicon.ico', rel: 'icon', sizes: '32x32' },
+    { href: '/favicon.svg', rel: 'icon', type: 'image/svg+xml' },
+    { href: '/site.webmanifest', rel: 'manifest' },
   ],
-  htmlAttrs: {
-    lang: 'en',
-  },
+  meta: [{ content: 'width=device-width, initial-scale=1', name: 'viewport' }],
+  titleTemplate: (titleChunk) => (titleChunk ? `${titleChunk} · Nuxt Starter` : 'Nuxt Starter'),
 });
 
 const description = 'A clean Nuxt 4 starter built with Nuxt UI and TypeScript';
 
 useSeoMeta({
   description,
-  ogTitle: 'Nuxt Starter',
   ogDescription: description,
+  ogTitle: 'Nuxt Starter',
 });
 </script>
 
