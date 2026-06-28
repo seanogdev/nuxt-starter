@@ -4,17 +4,17 @@ type LocalizedDateFormat = 'short' | 'medium' | 'full' | 'huge';
 type LocalizedTimeFormat = 'simple' | 'withSeconds' | 'withShortOffset' | 'withLongOffset';
 
 const DATE_FORMATS = {
-  short: DateTime.DATE_SHORT,
-  medium: DateTime.DATE_MED,
   full: DateTime.DATE_FULL,
   huge: DateTime.DATE_HUGE,
+  medium: DateTime.DATE_MED,
+  short: DateTime.DATE_SHORT,
 } as const;
 
 const TIME_FORMATS = {
   simple: DateTime.TIME_SIMPLE,
+  withLongOffset: DateTime.TIME_WITH_LONG_OFFSET,
   withSeconds: DateTime.TIME_WITH_SECONDS,
   withShortOffset: DateTime.TIME_WITH_SHORT_OFFSET,
-  withLongOffset: DateTime.TIME_WITH_LONG_OFFSET,
 } as const;
 
 function formatRelative(dateTime: DateTime) {
@@ -41,9 +41,9 @@ export function useDate() {
   }
 
   return {
-    formatTime,
     formatDate,
     formatDateTime,
     formatRelative,
+    formatTime,
   };
 }

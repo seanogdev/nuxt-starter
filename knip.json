@@ -19,8 +19,12 @@
   "project": ["**/*.{ts,tsx,js,mjs,vue}"],
   "ignore": ["app/app.config.ts"],
   "ignoreDependencies": [
+    "@nuxtjs/color-mode",
+    "@nuxt/fonts",
+    "@nuxt/icon",
     "@vitejs/plugin-vue",
     "@vitest/browser",
+    "nano-staged",
     "vite",
     "vue-tsc"
   ]
