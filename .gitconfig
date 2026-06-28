@@ -1,0 +1,7 @@
+[hook "linter"]
+   event = pre-commit
+   command = pnpm exec oxlint --staged
+
+[hook "format"]
+   event = pre-commit
+   command = pnpm exec oxfmt --check

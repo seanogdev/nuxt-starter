@@ -11,7 +11,7 @@
     "lint:eslint": "eslint --fix --cache --concurrency auto",
     "lint:oxlint": "oxlint --type-aware --fix --ignore-path .gitignore",
     "lint": "pnpm lint:oxlint && pnpm lint:eslint",
-    "postinstall": "nuxt prepare && simple-git-hooks",
+    "postinstall": "nuxt prepare",
     "preview": "nuxt preview",
     "test:watch": "vitest",
     "test": "vitest run --passWithNoTests",
@@ -42,14 +42,10 @@
     "oxlint": "^1.71.0",
     "oxlint-tsgolint": "^0.23.0",
     "playwright": "^1.61.1",
-    "simple-git-hooks": "^2.13.1",
     "typescript": "^6.0.3",
     "vite": "8.1.0",
     "vitest": "^4.1.9",
     "vue-tsc": "^3.3.5"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm exec nano-staged"
   },
   "nano-staged": {
     "*.{js,ts,vue}": [
