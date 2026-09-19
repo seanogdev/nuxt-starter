@@ -27,7 +27,7 @@ export default defineConfig({
     complexity: ['error', { max: 10 }],
     curly: 'off',
     'func-names': 'off',
-    'func-style': ['warn', 'declaration', { allowArrowFunctions: true }],
+    'func-style': ['warn', 'declaration'],
     'id-length': 'off',
     'import/extensions': 'error',
     'init-declarations': 'off',
